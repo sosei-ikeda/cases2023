@@ -1,0 +1,40 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def MG(x,p):
+    return x/(1+x**p)
+
+plt.figure(figsize=(7,4))
+x = np.linspace(-0.5,1.5,10000)
+plt.plot(x,MG(x,1),'-',label='p=1')
+plt.plot(x,MG(x,7),'-',label='p=7')
+plt.xlabel('$x+\gamma j$')
+plt.ylabel('$f$')
+plt.legend()
+plt.savefig('MG_nl.svg', bbox_inches='tight', pad_inches=0) 
+
+plt.figure(figsize=(7,4))
+plt.subplots_adjust(wspace=0.5)
+plt.subplot(1,2,1)
+x1 = np.linspace(-0.004,0.004,10000)
+plt.plot(x1,MG(x1,1),'-',label='p=1 (NARMA10)')
+plt.xlabel('$x+\gamma j$')
+plt.ylabel('$f$')
+plt.legend()
+plt.subplot(1,2,2)
+x2 = np.linspace(2.5e-8,0.0015,10000)
+plt.plot(x2,MG(x2,7),'-',label='p=7 (Spoken digit)', color='tab:orange')
+plt.xlabel('$x+\gamma j$')
+plt.ylabel('$f$')
+plt.legend()
+plt.savefig('MG_range.svg', bbox_inches='tight', pad_inches=0) 
+
+plt.figure(figsize=(7,4))
+x = np.linspace(-2,2,10000)
+plt.plot(x,np.tanh(x),'-',label=r'$\alpha=1$')
+plt.plot(x,2*np.tanh(x/2),'-',label=r'$\alpha=2$')
+plt.plot(x,3*np.tanh(x/3),'-',label=r'$\alpha=3$')
+plt.xlabel('$x$')
+plt.ylabel('$f$')
+plt.legend()
+plt.savefig('tanh.svg', bbox_inches='tight', pad_inches=0) 
