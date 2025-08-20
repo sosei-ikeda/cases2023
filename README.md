@@ -1,0 +1,1 @@
+S. Ikeda, H. Awano, and T. Sato, ”Modular dfr: digital delayed feedback reservoir model for enhancing design flexibility,” ACM Transactions on Embedded Computing Systems, vol. 22, no. 5s, pp. 1–20 (2023)
